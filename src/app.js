@@ -1,22 +1,15 @@
 import {model} from "./store/model"
-import {title, text, columns, image} from "./store/templates"
+import {templates} from "./store/templates"
+import "./css/main.css"
 
 const $site = document.querySelector("#site")
 
 model.forEach(block => {
-    let html = ""
+    const toHTML = templates[block.type]
 
-    if (block.type === "title") {
-       html = title(block)
-    } else if (block.type === "text") {
-        html = text(block)
-    } else if (block.type === "columns") {
-        html = columns(block)
-    } else if (block.type === "image") {
-        html = image(block)
+    if (toHTML) {
+        $site.insertAdjacentHTML("beforeend", toHTML(block))
     }
-
-    $site.insertAdjacentHTML("beforeend", html)
 })
 
 

@@ -1,7 +1,7 @@
 
 export const model = [
-    { type: "title", value: "Hello Javascript" },
-    { type: "text", value: "Here we go with some text" },
+    { type: "title", value: "React web" },
+    { type: "text", value: "React web" },
     { type: "columns", value: ["123123324", "545454545", "40413949134914", "545454545"] },
-    { type: "image", value: "../assets/image.png" }
+    { type: "image", value: "../image.png" }
 ]
